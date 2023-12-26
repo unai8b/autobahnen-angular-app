@@ -1,0 +1,35 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary">
+  <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <img alt="Toolbar app icon" aria-label="Toolbar app icon" class="toolbar-icon" src="assets/icons/highway.png" />
+  <span>{{ title }}</span>
+  <span class="spacer"></span>
+  <div class="theme-mode">
+    <mat-slide-toggle (change)="onThemeModeSwitched($event)"></mat-slide-toggle>
+    <mat-icon aria-hidden="false" aria-label="Dark theme icon" fontIcon="dark_mode" />
+  </div>
+</mat-toolbar>
+<!-- Sidenav -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-nav-list>
+      <a mat-list-item href="#">
+        <div class="menu-item">
+          <mat-icon aria-hidden="false" aria-label="Home menu icon" fontIcon="home"></mat-icon>
+          <span>{{ homeSidenavText }}</span>
+        </div>
+      </a>
+      <a mat-list-item href="#">
+        <div class="menu-item">
+          <mat-icon aria-hidden="false" aria-label="Highways menu icon" fontIcon="directions_car"></mat-icon>
+          <span>{{ highwaySidenavText }}</span>
+        </div>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <!-- Content -->
+  <mat-sidenav-content></mat-sidenav-content>
+</mat-sidenav-container>

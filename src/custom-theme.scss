@@ -12,24 +12,36 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$AutobahnenAngularApp-primary: mat.define-palette(mat.$indigo-palette);
-$AutobahnenAngularApp-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$AutobahnAngularApp-primary: mat.define-palette(mat.$indigo-palette);
+$AutobahnAngularApp-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$AutobahnenAngularApp-warn: mat.define-palette(mat.$red-palette);
+$AutobahnAngularApp-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$AutobahnenAngularApp-theme: mat.define-light-theme((
+$AutobahnAngularApp-theme: mat.define-light-theme((
   color: (
-    primary: $AutobahnenAngularApp-primary,
-    accent: $AutobahnenAngularApp-accent,
-    warn: $AutobahnenAngularApp-warn,
+    primary: $AutobahnAngularApp-primary,
+    accent: $AutobahnAngularApp-accent,
+    warn: $AutobahnAngularApp-warn,
+  )
+));
+
+$AutobahnAngularApp-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $AutobahnAngularApp-primary,
+    accent: $AutobahnAngularApp-accent,
+    warn: $AutobahnAngularApp-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($AutobahnenAngularApp-theme);
+@include mat.all-component-themes($AutobahnAngularApp-theme);
+
+.dark-theme {
+  @include mat.all-component-colors($AutobahnAngularApp-dark-theme);
+}
 
