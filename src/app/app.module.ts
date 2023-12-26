@@ -16,6 +16,7 @@ import { AsyncPipe } from '@angular/common';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HighwaysPageComponent } from './pages/highways-page/highways-page.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatSlideToggleModule,
     AsyncPipe,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
