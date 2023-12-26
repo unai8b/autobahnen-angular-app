@@ -1,1 +1,3 @@
-<app-navigation [title]="title" (themeModeSwitched)="switchThemeMode($event)"></app-navigation>
+<app-navigation [title]="title" (themeModeSwitched)="switchThemeMode($event)">
+  <router-outlet></router-outlet>
+</app-navigation>
