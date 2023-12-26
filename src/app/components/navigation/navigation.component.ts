@@ -28,7 +28,7 @@ export class NavigationComponent {
   @Input() title!: string;
   @Output() readonly themeModeSwitched = new EventEmitter<boolean>();
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
     .pipe(
       map(result => result.matches),
       shareReplay()
