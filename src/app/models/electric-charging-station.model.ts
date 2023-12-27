@@ -1,4 +1,4 @@
-export class Roadwork {
+export class ElectricChargingStation {
   constructor(
     public title: string
   ) {}

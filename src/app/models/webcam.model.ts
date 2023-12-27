@@ -1,4 +1,4 @@
-export class Roadwork {
+export class Webcam {
   constructor(
     public title: string
   ) {}

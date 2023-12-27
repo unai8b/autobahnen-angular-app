@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiRoadService } from '../../services/api-road.service';
 import { Road } from '../../models/road.model';
+import { Roadwork } from '../../models/roadwork.model';
 
 @Component({
   selector: 'app-highways-page',
@@ -10,15 +11,21 @@ import { Road } from '../../models/road.model';
 })
 export class HighwaysPageComponent {
   public roads: Array<Road> = [];
+  public roadworks: Array<Roadwork> = [];
   public pageTitle: string;
 
-  constructor(private apiService: ApiRoadService) {
+  constructor(private apiRoadService: ApiRoadService) {
     this.pageTitle = 'Highways';
   }
 
   ngOnInit() {
-    this.apiService.getRoads().subscribe((data: Road[]) => {
+    this.apiRoadService.getRoads().subscribe((data: Road[]) => {
       this.roads = data;
+      console.log(data)
     });
+    //this.apiRoadService.getRoadworksByRoadId('A1').subscribe((data: Roadwork[]) => {
+    //  this.roadworks = data;
+      //console.log(data)
+    //});
   }
 }
