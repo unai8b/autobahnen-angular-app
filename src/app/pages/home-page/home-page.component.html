@@ -1,25 +1,36 @@
 <header>
-  <h1>Welcome!</h1>
+  <h1>{{ pageTitle }}</h1>
 </header>
 <article>
   <section class="home-section">
-    <h2>Who am I?</h2>
+    <h2>About me</h2>
     <p>My name is Unai Benajes. I am a passionate individual dedicated to technology and software development. As an
       informatics engineer and full-stack application developer, I bring my experience in both front-end and back-end
       technologies. My goal is to find a job that aligns with my skills and allows me to contribute my knowledge as a
       software engineer.</p>
   </section>
   <section class="home-section">
-    <h2>What is this app for?</h2>
-    <p>This app is a technical test designed to showcase my skills with Angular and Angular Material. It's a simple yet
-      well-structured application built following SOLID principles. The app retrieves and displays information from a
-      highways API, in order to demostrate my ability to work with external data sources and create efficient and
-      maintainable code.</p>
+    <h2>Purpose of the application</h2>
+    <p>This application functions as a technical test, emphasizing my experience with Angular and Angular Material. It
+      presents a clear and well-organized implementation that adheres to SOLID principles and emphasizes clean code
+      practices. The application showcases my skills in retrieving and displaying information from a highways API,
+      showcasing my adeptness in working with external data sources and my ability to craft efficient and maintainable
+      code.</p>
   </section>
   <section class="home-section">
-    <h2>Contact me</h2>
-    <p>Feel free to reach out through my LinkedIn: <a href="https://www.linkedin.com/in/unai-benajes-esbr%C3%AD/"
-        target="_blank">{{ linkedin }}</a>. You can also send me an email at <a href="mailto:unai8b@gmail.com">
-        {{ gmail }}</a>. Don't hesitate to contact me for any inquiries or discussions.</p>
+    <h2>Contact me!</h2>
+    <p>Feel free to connect with me on LinkedIn or reach out via email. I am open to discussions and inquiries. If you
+      are interested in collaborating on work or have professional opportunities to discuss, don't hesitate to contact
+      me. Your interest and engagement are greatly appreciated. Looking forward to connecting with you!</p>
+    <div class="button-group">
+      <button mat-button class="button" (click)="openLinkedIn()" matTooltip="Unai Benajes Esbrí">
+        <mat-icon aria-label="LinkedIn icon">group</mat-icon>
+        LinkedIn
+      </button>
+      <button mat-button class="button" (click)="openGmail()" matTooltip="unai8b@gmail.com">
+        <mat-icon aria-label="Gmail icon">mail</mat-icon>
+        Gmail
+      </button>
+    </div>
   </section>
 </article>
