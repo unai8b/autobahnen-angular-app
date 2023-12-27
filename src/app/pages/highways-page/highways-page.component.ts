@@ -16,6 +16,9 @@ export class HighwaysPageComponent {
     this.pageTitle = 'Highways';
   }
 
+  /**
+   * Hook used to fetch the list of roads from the API using the apiRoadService.
+   */
   ngOnInit() {
     this.apiRoadService.getRoads().subscribe((data: Road[]) => {
       this.roads = data;

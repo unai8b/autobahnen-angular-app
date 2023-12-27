@@ -1,4 +1,5 @@
+// Application environment
 export const environment = {
   production: false,
-  baseUrl: 'https://verkehr.autobahn.de/o/autobahn'
-}
+  baseUrl: 'https://verkehr.autobahn.de/o/autobahn',
+};

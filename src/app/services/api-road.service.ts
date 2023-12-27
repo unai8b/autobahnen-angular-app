@@ -17,6 +17,11 @@ export class ApiRoadService {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Retrieve information about all roads from the API, including associated roadworks, webcams, parking lorries,
+   * warnings, closures, and electric charging stations.
+   * @returns {Observable<Road[]>} Observable emitting an array of Road objects representing the information about each road.
+   */
   getRoads(): Observable<Road[]> {
     const url = `${this.baseUrl}`;
     return this.http.get<{ roads: string[] }>(url).pipe(
@@ -24,7 +29,8 @@ export class ApiRoadService {
         if (response && response.roads) {
           const roadObservables: Observable<Road>[] = response.roads.map((roadId) => {
             if (roadId === 'A1/A59') {
-              return of(new Road(roadId, [], [], [], [], [], [])); // Return empty arrays for "A1/A59" highway
+              // Due to the format of the road, the request could not be completed for this specific highway.
+              return of(new Road(roadId, [], [], [], [], [], [])); // Return empty arrays for "A1/A59" highway.
             } else {
               const roadworksObservable = this.getRoadworksByRoadId(roadId);
               const webcamsObservable = this.getWebcamsByRoadId(roadId);
@@ -68,6 +74,11 @@ export class ApiRoadService {
     );
   }
 
+  /**
+   * Retrieve roadworks associated with a specific road ID from the API.
+   * @param {string} roadId - The ID of the road for which roadworks are to be retrieved.
+   * @returns {Observable<Roadwork[]>} Observable emitting an array of Roadwork objects associated with the specified road ID.
+   */
   getRoadworksByRoadId(roadId: string): Observable<Roadwork[]> {
     const encodedRoadId = encodeURIComponent(roadId);
     var url = `${this.baseUrl}${endpoints.getRoadworksByRoadId.replace(':roadId', encodedRoadId)}`;
@@ -82,6 +93,11 @@ export class ApiRoadService {
     );
   }
 
+  /**
+   * Retrieve webcams associated with a specific road ID from the API.
+   * @param {string} roadId - The ID of the road for which webcams are to be retrieved.
+   * @returns {Observable<Webcam[]>} Observable emitting an array of Webcam objects associated with the specified road ID.
+   */
   getWebcamsByRoadId(roadId: string): Observable<Webcam[]> {
     const encodedRoadId = encodeURIComponent(roadId);
     var url = `${this.baseUrl}${endpoints.getWebcamsByRoadId.replace(':roadId', encodedRoadId)}`;
@@ -96,6 +112,11 @@ export class ApiRoadService {
     );
   }
 
+  /**
+   * Retrieve parking lorries associated with a specific road ID from the API.
+   * @param {string} roadId - The ID of the road for which parking lorries are to be retrieved.
+   * @returns {Observable<ParkingLorry[]>} Observable emitting an array of ParkingLorry objects associated with the specified road ID.
+   */
   getParkingLorriesByRoadId(roadId: string): Observable<ParkingLorry[]> {
     const encodedRoadId = encodeURIComponent(roadId);
     var url = `${this.baseUrl}${endpoints.getParkingLorriesByRoadId.replace(':roadId', encodedRoadId)}`;
@@ -110,6 +131,11 @@ export class ApiRoadService {
     );
   }
 
+  /**
+   * Retrieve warnings associated with a specific road ID from the API.
+   * @param {string} roadId - The ID of the road for which warnings are to be retrieved.
+   * @returns {Observable<Warning[]>} Observable emitting an array of Warning objects associated with the specified road ID.
+   */
   getWarningsByRoadId(roadId: string): Observable<Warning[]> {
     const encodedRoadId = encodeURIComponent(roadId);
     var url = `${this.baseUrl}${endpoints.getWarningsByRoadId.replace(':roadId', encodedRoadId)}`;
@@ -124,6 +150,11 @@ export class ApiRoadService {
     );
   }
 
+  /**
+   * Retrieve closures associated with a specific road ID from the API.
+   * @param {string} roadId - The ID of the road for which closures are to be retrieved.
+   * @returns {Observable<Closure[]>} Observable emitting an array of Closure objects associated with the specified road ID.
+   */
   getClosuresByRoadId(roadId: string): Observable<Closure[]> {
     const encodedRoadId = encodeURIComponent(roadId);
     var url = `${this.baseUrl}${endpoints.getClosuresByRoadId.replace(':roadId', encodedRoadId)}`;
@@ -138,6 +169,12 @@ export class ApiRoadService {
     );
   }
 
+  /**
+   * Retrieve electric charging stations associated with a specific road ID from the API.
+   *
+   * @param {string} roadId - The ID of the road for which electric charging stations are to be retrieved.
+   * @returns {Observable<ElectricChargingStation[]>} Observable emitting an array of ElectricChargingStation objects associated with the specified road ID.
+   */
   getElectricChargingStationsByRoadId(roadId: string): Observable<ElectricChargingStation[]> {
     const encodedRoadId = encodeURIComponent(roadId);
     var url = `${this.baseUrl}${endpoints.getElectricChargingStationsByRoadId.replace(':roadId', encodedRoadId)}`;

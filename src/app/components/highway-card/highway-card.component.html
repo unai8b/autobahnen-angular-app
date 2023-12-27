@@ -1,35 +1,44 @@
 <mat-card class="card">
+  <!-- Card header -->
   <mat-card-header>
     <mat-card-title>{{ road.roadId }}</mat-card-title>
   </mat-card-header>
+  <!-- Card divider -->
   <mat-divider></mat-divider>
+  <!-- Card content -->
   <mat-card-content>
     <div class="card-content">
+      <!-- Roadworks -->
       <div class="card-content-item card-content-roadworks">
         <img alt="Roadwork icon" aria-label="Roadwork icon" class="card-content-icon" src="assets/icons/roadwork.png"
           matTooltip="Roadworks" />
         <div>{{ getRoadworkCount() }}</div>
       </div>
+      <!-- Webcams -->
       <div class="card-content-item card-content-webcams">
         <img alt="Webcam icon" aria-label="Webcam icon" class="card-content-icon" src="assets/icons/webcam.png"
           matTooltip="Webcams" />
         <div>{{ getWebcamsCount() }}</div>
       </div>
+      <!-- Parking lorries -->
       <div class="card-content-item card-content-parking-lorries">
         <img alt="Parking lorry icon" aria-label="Parking lorry icon" class="card-content-icon"
           src="assets/icons/parking-lorry.png" matTooltip="Parking lorries" />
         <div>{{ getParkingLorriesCount() }}</div>
       </div>
+      <!-- Warnings -->
       <div class="card-content-item card-content-warnings">
         <img alt="Warning icon" aria-label="Warning icon" class="card-content-icon" src="assets/icons/warning.png"
           matTooltip="Warnings" />
         <div>{{ getWarningCount() }}</div>
       </div>
+      <!-- Closures -->
       <div class="card-content-item card-content-closures">
         <img alt="Closure icon" aria-label="Closure icon" class="card-content-icon" src="assets/icons/closure.png"
           matTooltip="Closures" />
         <div>{{ getClosuresCount() }}</div>
       </div>
+      <!-- Electric charging stations -->
       <div class="card-content-item card-content-electric-charging-stations">
         <img alt="Electric charging station icon" aria-label="Electric charging station icon" class="card-content-icon"
           src="assets/icons/electric-charging-station.png" matTooltip="Electric charging stations" />

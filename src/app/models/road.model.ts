@@ -5,6 +5,7 @@ import { Roadwork } from "./roadwork.model";
 import { Warning } from "./warning.model";
 import { Webcam } from "./webcam.model";
 
+// Road model class
 export class Road {
   constructor(
     public roadId: string,

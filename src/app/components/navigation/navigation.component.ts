@@ -1,12 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AsyncPipe } from '@angular/common';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSlideToggleChange, MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -28,12 +22,20 @@ export class NavigationComponent {
   @Input() title!: string;
   @Output() readonly themeModeSwitched = new EventEmitter<boolean>();
 
+  /**
+   * Observable that tracks the current viewport status indicating whether it matches a handset or small breakpoint.
+   * @type {Observable<boolean>} Observable emitting true if the current viewport matches the specified breakpoints, false otherwise.
+   */
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Small])
     .pipe(
       map(result => result.matches),
       shareReplay()
     );
 
+  /**
+   * Handle the theme mode switch event triggered by a MatSlideToggle component.
+   * @param {MatSlideToggleChange} event - The MatSlideToggleChange event containing the new checked state.
+   */
   onThemeModeSwitched({ checked }: MatSlideToggleChange) {
     this.themeModeSwitched.emit(checked);
   }

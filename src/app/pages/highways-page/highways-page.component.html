@@ -1,11 +1,15 @@
+<!-- Header -->
 <header>
   <h1>{{ pageTitle }}</h1>
 </header>
+<!-- Roads template -->
 <ng-container *ngIf="roads.length; else loadingRoads">
   <section class="cards-container">
+    <!-- Highway cards -->
     <app-highway-card [road]="road" *ngFor="let road of roads; let i = index"></app-highway-card>
   </section>
 </ng-container>
+<!-- Loading template -->
 <ng-template #loadingRoads>
   <section class="loading-section">
     <mat-spinner diameter="70" strokeWidth="4"></mat-spinner>
