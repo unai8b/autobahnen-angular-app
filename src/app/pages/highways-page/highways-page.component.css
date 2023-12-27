@@ -11,6 +11,13 @@ header {
   align-items: center;
 }
 
+.loading-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
 @media (min-width: 600px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);

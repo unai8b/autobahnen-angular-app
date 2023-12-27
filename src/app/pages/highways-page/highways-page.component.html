@@ -1,13 +1,13 @@
 <header>
-  <h1>Highways</h1>
+  <h1>{{ pageTitle }}</h1>
 </header>
-<div class="cards-container">
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-  <app-highway-card></app-highway-card>
-</div>
+<ng-container *ngIf="roads.length; else loadingRoads">
+  <section class="cards-container">
+    <app-highway-card [road]="road" *ngFor="let road of roads; let i = index"></app-highway-card>
+  </section>
+</ng-container>
+<ng-template #loadingRoads>
+  <section class="loading-section">
+    <mat-spinner diameter="70" strokeWidth="4"></mat-spinner>
+  </section>
+</ng-template>

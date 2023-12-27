@@ -5,3 +5,7 @@
 mat-card-header {
   padding-bottom: 10px;
 }
+
+mat-card-title {
+  font-weight: bold;
+}

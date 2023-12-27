@@ -10,13 +10,15 @@ import { Road } from '../../models/road.model';
 })
 export class HighwaysPageComponent {
   public roads: Array<Road> = [];
+  public pageTitle: string;
 
-  constructor(private apiService: ApiRoadService) {}
+  constructor(private apiService: ApiRoadService) {
+    this.pageTitle = 'Highways';
+  }
 
   ngOnInit() {
     this.apiService.getRoads().subscribe((data: Road[]) => {
       this.roads = data;
-      console.log(data);
     });
   }
 }

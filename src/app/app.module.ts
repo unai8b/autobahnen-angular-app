@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { HighwayCardComponent } from './components/highway-card/highway-card.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HighwayCardComponent } from './components/highway-card/highway-card.com
     MatSlideToggleModule,
     AsyncPipe,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
