@@ -1,0 +1,7 @@
+.card {
+  max-width: 300px;
+}
+
+mat-card-header {
+  padding-bottom: 10px;
+}

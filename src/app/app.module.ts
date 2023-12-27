@@ -17,6 +17,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HighwaysPageComponent } from './pages/highways-page/highways-page.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { HighwayCardComponent } from './components/highway-card/highway-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavigationComponent,
     HomePageComponent,
     HighwaysPageComponent,
+    HighwayCardComponent,
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatSlideToggleModule,
     AsyncPipe,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],
