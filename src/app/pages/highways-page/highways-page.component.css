@@ -18,32 +18,44 @@ header {
   margin-top: 50px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .cards-container {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1500px) {
   .cards-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1800px) {
   .cards-container {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 2100px) {
   .cards-container {
     grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 2400px) {
+  .cards-container {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media (min-width: 2700px) {
+  .cards-container {
+    grid-template-columns: repeat(8, 1fr);
   }
 }

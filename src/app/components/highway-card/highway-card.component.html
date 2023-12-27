@@ -4,6 +4,37 @@
   </mat-card-header>
   <mat-divider></mat-divider>
   <mat-card-content>
-    <p>Mat Card content sample text</p>
+    <div class="card-content">
+      <div class="card-content-item card-content-roadworks">
+        <img alt="Roadwork icon" aria-label="Roadwork icon" class="card-content-icon" src="assets/icons/roadwork.png"
+          matTooltip="Roadworks" />
+        <div>{{ getRoadworkCount() }}</div>
+      </div>
+      <div class="card-content-item card-content-webcams">
+        <img alt="Webcam icon" aria-label="Webcam icon" class="card-content-icon" src="assets/icons/webcam.png"
+          matTooltip="Webcams" />
+        <div>{{ getWebcamsCount() }}</div>
+      </div>
+      <div class="card-content-item card-content-parking-lorries">
+        <img alt="Parking lorry icon" aria-label="Parking lorry icon" class="card-content-icon"
+          src="assets/icons/parking-lorry.png" matTooltip="Parking lorries" />
+        <div>{{ getParkingLorriesCount() }}</div>
+      </div>
+      <div class="card-content-item card-content-warnings">
+        <img alt="Warning icon" aria-label="Warning icon" class="card-content-icon" src="assets/icons/warning.png"
+          matTooltip="Warnings" />
+        <div>{{ getWarningCount() }}</div>
+      </div>
+      <div class="card-content-item card-content-closures">
+        <img alt="Closure icon" aria-label="Closure icon" class="card-content-icon" src="assets/icons/closure.png"
+          matTooltip="Closures" />
+        <div>{{ getClosuresCount() }}</div>
+      </div>
+      <div class="card-content-item card-content-electric-charging-stations">
+        <img alt="Electric charging station icon" aria-label="Electric charging station icon" class="card-content-icon"
+          src="assets/icons/electric-charging-station.png" matTooltip="Electric charging stations" />
+        <div>{{ getElectricChargingStationsCount() }}</div>
+      </div>
+    </div>
   </mat-card-content>
 </mat-card>

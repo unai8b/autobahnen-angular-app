@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { HighwayCardComponent } from './components/highway-card/highway-card.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     HttpClientModule,
     MatCardModule,
     MatProgressSpinnerModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
