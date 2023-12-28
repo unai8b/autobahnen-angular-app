@@ -1,0 +1,11 @@
+version: '3.5' # Configuration file version
+services: # Services
+  angular-app-service: # Service name
+    container_name: appcontainer # Container name
+    build: . # Dockerfile location
+    ports: # Port mapping
+      - "4200:4200"
+    volumes: # Volume binding
+      - .:/app
+    command: > # Run commands
+      bash -c "npm install && ng serve --host 0.0.0.0 --port 4200"
