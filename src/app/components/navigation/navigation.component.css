@@ -41,3 +41,7 @@
   align-items: center;
   gap: 12px;
 }
+
+.active {
+  background-color: #f1f1f1 !important;
+}
