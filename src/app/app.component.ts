@@ -7,7 +7,7 @@ import { Component, HostBinding } from '@angular/core';
 })
 export class AppComponent {
   public title = 'Autobahnen Angular App';
-  private darkTheme = false;
+  public darkTheme = false;
   
   /**
    * Get the theme mode based on the current dark theme setting.

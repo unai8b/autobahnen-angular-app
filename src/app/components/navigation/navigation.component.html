@@ -18,14 +18,15 @@
     [opened]="(isHandset$ | async) === false">
     <mat-nav-list>
       <!-- Home page link -->
-      <a mat-list-item [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a mat-list-item [routerLink]="['/']" [routerLinkActive]="['active']" [class.dark-mode-active]="darkTheme"
+        [routerLinkActiveOptions]="{exact: true}">
         <div class="menu-item">
           <mat-icon aria-hidden="false" aria-label="Home menu icon" fontIcon="home"></mat-icon>
           <span>{{ homeSidenavText }}</span>
         </div>
       </a>
       <!-- Highways page link -->
-      <a mat-list-item [routerLink]="['/highways']" [routerLinkActive]="['active']">
+      <a mat-list-item [routerLink]="['/highways']" [class.dark-mode-active]="darkTheme" [routerLinkActive]="['active']">
         <div class="menu-item">
           <mat-icon aria-hidden="false" aria-label="Highways menu icon" fontIcon="directions_car"></mat-icon>
           <span>{{ highwaySidenavText }}</span>

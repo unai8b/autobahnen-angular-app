@@ -1,5 +1,5 @@
 <!-- Navigation component -->
-<app-navigation [title]="title" (themeModeSwitched)="switchThemeMode($event)">
+<app-navigation [title]="title" [darkTheme]="darkTheme" (themeModeSwitched)="switchThemeMode($event)">
   <!-- Router outlet -->
   <router-outlet></router-outlet>
 </app-navigation>

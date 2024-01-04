@@ -45,3 +45,7 @@
 .active {
   background-color: #f1f1f1 !important;
 }
+
+.dark-mode-active.active {
+  background-color: #717171 !important;
+}

@@ -20,6 +20,7 @@ export class NavigationComponent {
   }
 
   @Input() title!: string;
+  @Input() darkTheme!: boolean;
   @Output() readonly themeModeSwitched = new EventEmitter<boolean>();
 
   /**
